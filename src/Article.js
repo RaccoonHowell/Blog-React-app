@@ -6,13 +6,33 @@ class Article extends Component {
         super(props);
 
         this.state = {
-
+            loaded: false,
+            article: {}
         }
     }
 
-    render() {
-        return (
+    componentDidMount() {
+        const { id } = this.props;
 
+        api.get(`/articles/${id}`).then(({ data }) => { 
+            this.setState({ 
+                loaded: true,
+                article: data.data
+            });
+        }); 
+    }
+
+    render() {
+        
+        let { article, loaded } = this.state;
+
+        return !loaded ? <p>Loading...</p> : ( 
+            <>
+                <h2>Article</h2> 
+                <h1>{ article.title }</h1>
+                <p>{ article.article }</p>
+                <p>{ article.tags }</p>
+            </> 
         );
     }
 }

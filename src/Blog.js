@@ -9,8 +9,18 @@ import {
 
 const Blog = () => (
     <Router>
-        <Articles />
-        <Article id={ number } />
+
+        <Switch>
+
+            <Route path="/articles/:id" render={ ({ match }) => ( <Article id={ match.params.id } /> ) } />
+
+            <Route path ="/articles" component={ Articles } />
+
+            <Route path="/" component={ Articles } />
+        
+        </Switch>
+
+
     </Router>
 );
 

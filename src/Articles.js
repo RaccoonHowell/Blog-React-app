@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import api from "./api";
+import { Link } from "react-router-dom";
 
 class Articles extends Component {
     constructor(props) {
@@ -30,9 +31,9 @@ class Articles extends Component {
                     { articles.map(article => (
                         <li
                             key={ article.id }
-                            className="list-group-item" 
-                        >
-                            { article.title } 
+                            className="list-group-item"   
+                        > 
+                            <Link to={ `/articles/${article.id}` }>{ article.title }</Link>   
                         </li>
                     )) } 
                 </ul>
