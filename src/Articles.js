@@ -22,11 +22,12 @@ class Articles extends Component {
     }
 
     render() {
-        let { articles, loaded } = this.state;
+        const { articles, loaded } = this.state;
 
         return !loaded ? <p>Loading...</p> : ( 
             <>
                 <h2>Articles</h2> 
+                
                 <ul className="list-group">
                     { articles.map(article => (
                         <li

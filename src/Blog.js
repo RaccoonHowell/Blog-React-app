@@ -1,7 +1,6 @@
 import React from "react";
 import Articles from "./Articles";
 import Article from "./Article";
-
 import {
     BrowserRouter as Router,
     Route, Switch
@@ -17,9 +16,8 @@ const Blog = () => (
             <Route path ="/articles" component={ Articles } />
 
             <Route path="/" component={ Articles } />
-        
-        </Switch>
 
+        </Switch>
 
     </Router>
 );
