@@ -4,7 +4,7 @@ import axios from "axios";
 // create a version of axios with useful defaults
 export default axios.create({
     // use your own url
-    baseURL: "http://rachel.restful.training/api/blog/",
+    baseURL: "http://rachel.restful.training/api/blog",
 
     // use your own key
     params: {

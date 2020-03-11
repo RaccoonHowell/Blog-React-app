@@ -13,7 +13,7 @@ class Articles extends Component {
     }
 
     componentDidMount() {
-        api.get("articles").then(({ data }) => { 
+        api.get("/articles").then(({ data }) => { 
             this.setState({ 
                 loaded: true,
                 articles: data.data
